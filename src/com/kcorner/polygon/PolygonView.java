@@ -11,6 +11,8 @@ import java.text.*;
 import javax.swing.JTable;
 import javax.swing.ListSelectionModel;
 import javax.swing.table.TableColumn;
+import java.awt.Toolkit;
+import java.awt.Dialog.ModalExclusionType;
 
 
 public class PolygonView extends JFrame{
@@ -59,6 +61,8 @@ public class PolygonView extends JFrame{
 	 */
 	public PolygonView() {
 		super();
+		setModalExclusionType(ModalExclusionType.APPLICATION_EXCLUDE);
+		setIconImage(Toolkit.getDefaultToolkit().getImage("F:\\Users\\Kang Chen\\My Projects\\HelloPoly\\resource\\polygon_icon.jpg"));
 		initialize();
 		myPoly.setNumberOfSides(mySlider.getValue());
 		drawPoly.setSide(mySlider.getValue());
@@ -74,7 +78,7 @@ public class PolygonView extends JFrame{
 	private void initialize() {
 		this.setSize(300, 387);
 		this.setContentPane(getJContentPane());
-		this.setTitle("My Polygon Application");
+		this.setTitle("Polygon Application");
 		drawPoly.setPreferredSize(new Dimension(256, 210));
 		drawPoly.setSize(new Dimension(275, 213));
 		drawPoly.setBackground(new Color(153, 188, 218));
@@ -234,4 +238,4 @@ public class PolygonView extends JFrame{
 //	    render.setBackground(Color.red);
 	    tc.setCellRenderer(render);		
 	}
-}  //  @jve:decl-index=0:visual-constraint="316,168"  
+} 
